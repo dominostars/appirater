@@ -71,9 +71,7 @@ static BOOL _alwaysUseMainBundle = NO;
 
 @interface Appirater ()
 - (BOOL)connectedToNetwork;
-+ (Appirater*)sharedInstance;
 - (void)showRatingAlert;
-- (BOOL)ratingConditionsHaveBeenMet;
 - (void)incrementUseCount;
 - (void)hideRatingAlert;
 @end

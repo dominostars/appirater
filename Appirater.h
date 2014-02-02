@@ -60,7 +60,7 @@ extern NSString *const kAppiraterReminderRequestDate;
  This is the message your users will see once they've passed the day+launches
  threshold.
  */
-#define APPIRATER_LOCALIZED_MESSAGE     NSLocalizedStringFromTableInBundle(@"If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!", @"AppiraterLocalizable", [Appirater bundle], nil)
+#define APPIRATER_LOCALIZED_MESSAGE     NSLocalizedStringFromTableInBundle(@"If you enjoy playing %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!", @"AppiraterLocalizable", [Appirater bundle], nil)
 #define APPIRATER_MESSAGE				[NSString stringWithFormat:APPIRATER_LOCALIZED_MESSAGE, APPIRATER_APP_NAME]
 
 /*!
@@ -97,6 +97,9 @@ extern NSString *const kAppiraterReminderRequestDate;
 #else
 @property(nonatomic, unsafe_unretained) NSObject <AppiraterDelegate> *delegate;
 #endif
+
++ (Appirater*)sharedInstance;
+- (BOOL)ratingConditionsHaveBeenMet;
 
 /*!
  Tells Appirater that the app has launched, and on devices that do NOT
